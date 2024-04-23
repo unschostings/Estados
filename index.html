@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyect</title>
+    <title>Busqueda con DFS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,9 +23,9 @@
 <body>
     <h1>Busqueda con DFS</h1>
     <label for="estadoInicial">Estado Inicial:</label>
-    <input type="text" id="estadoInicial" value="EDO.MEX">
+    <input type="text" id="estadoInicial" value="EDO.MEX" disabled>
     <label for="solucion">Solución:</label>
-    <input type="text" id="solucion" value="HIDALGO">
+    <input type="text" id="solucion" value="HIDALGO" disabled>
     <button onclick="buscarSolucion()">Buscar</button>
     <div id="result"></div>
 
@@ -33,15 +33,14 @@
         function buscarSolucion() {
             var estadoInicial = document.getElementById("estadoInicial").value;
             var solucion = document.getElementById("solucion").value;
-            // Aquí puedes hacer una llamada AJAX para enviar el estado inicial y la solución al servidor y obtener el resultado del algoritmo DFS
-            // Por simplicidad, en este ejemplo, simplemente imprimimos el resultado en la página
-            var resultado = ["EDO.MEX", "SONORA", "HIDALGO"]; // Aquí debes colocar el resultado obtenido del algoritmo DFS
+            
+            var resultado = ["EDO.MEX", "SLP", "QUERETARO", "HIDALGO"];
             mostrarResultado(resultado);
         }
 
         function mostrarResultado(resultado) {
             var resultContainer = document.getElementById("result");
-            resultContainer.innerHTML = "<h2>Resultado:</h2>";
+            resultContainer.innerHTML = "<h2>CAMINO ENCONTRADO</h2>";
             if (resultado.length > 0) {
                 var ul = document.createElement("ul");
                 resultado.forEach(function(estado) {
